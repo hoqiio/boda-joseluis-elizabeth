@@ -1,763 +1,981 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boda Elizabeth & José Luis - 28.11.26</title>
-    
-    <!-- Google Fonts: Cormorant Garamond (Elegante y Clásica) y Montserrat (Moderna y Clara) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome para iconos de boda elegantes -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Configuración personalizada de Tailwind para la paleta Terracota, Arena y Oro -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        terracotta: {
-                            50: '#FDFBF7',
-                            100: '#F7F1EA',
-                            200: '#E8D9CE',
-                            300: '#D4B8A6',
-                            400: '#BD937D',
-                            500: '#A46E56', // Terracota principal
-                            600: '#8C523A', // Terracota oscuro elegante
-                            700: '#733C27',
-                            800: '#592917',
-                            900: '#3D1709',
-                            950: '#220B04'
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Boda Elizabeth & José Luis - 28.11.26</title>
+
+        <!-- Google Fonts: Cormorant Garamond (Elegante y Clásica) y Montserrat (Moderna y Clara) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap"
+            rel="stylesheet" />
+
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- FontAwesome para iconos de boda elegantes -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+        <!-- Configuración personalizada de Tailwind para la paleta Terracota, Arena y Oro -->
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            terracotta: {
+                                50: "#FDFBF7",
+                                100: "#F7F1EA",
+                                200: "#E8D9CE",
+                                300: "#D4B8A6",
+                                400: "#BD937D",
+                                500: "#A46E56", // Terracota principal
+                                600: "#8C523A", // Terracota oscuro elegante
+                                700: "#733C27",
+                                800: "#592917",
+                                900: "#3D1709",
+                                950: "#220B04"
+                            },
+                            sage: {
+                                100: "#F1F3F0",
+                                200: "#D5DDD3",
+                                500: "#7B8E7C",
+                                800: "#3D4D3E"
+                            },
+                            gold: {
+                                100: "#FBF7EB",
+                                200: "#F4E8C1",
+                                500: "#C5A059",
+                                600: "#AA843D"
+                            },
+                            creme: {
+                                50: "#FAF6F0",
+                                100: "#F5ECE1",
+                                200: "#EDE0CF"
+                            }
                         },
-                        sage: {
-                            100: '#F1F3F0',
-                            200: '#D5DDD3',
-                            500: '#7B8E7C',
-                            800: '#3D4D3E',
-                        },
-                        gold: {
-                            100: '#FBF7EB',
-                            200: '#F4E8C1',
-                            500: '#C5A059',
-                            600: '#AA843D',
-                        },
-                        creme: {
-                            50: '#FAF6F0',
-                            100: '#F5ECE1',
-                            200: '#EDE0CF',
+                        fontFamily: {
+                            serif: ["Cormorant Garamond", "serif"],
+                            sans: ["Montserrat", "sans-serif"]
                         }
-                    },
-                    fontFamily: {
-                        serif: ['Cormorant Garamond', 'serif'],
-                        sans: ['Montserrat', 'sans-serif'],
                     }
                 }
+            };
+        </script>
+
+        <style>
+            /* Animaciones fluidas para elementos premium */
+            @keyframes fadeInGold {
+                0% {
+                    opacity: 0;
+                    transform: scale(0.97);
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
             }
-        }
-    </script>
+            .animate-fade-gold {
+                animation: fadeInGold 1.8s ease-out forwards;
+            }
 
-    <style>
-        /* Animaciones fluidas para elementos premium */
-        @keyframes fadeInGold {
-            0% { opacity: 0; transform: scale(0.97); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-        .animate-fade-gold {
-            animation: fadeInGold 1.8s ease-out forwards;
-        }
+            /* Estilo interactivo para el ecualizador de música */
+            .audio-bar {
+                transition: height 0.2s ease;
+            }
+            .playing .audio-bar {
+                animation: bounce 0.8s ease infinite alternate;
+            }
+            .playing .bar-1 {
+                animation-delay: 0.1s;
+            }
+            .playing .bar-2 {
+                animation-delay: 0.3s;
+            }
+            .playing .bar-3 {
+                animation-delay: 0.2s;
+            }
+            .playing .bar-4 {
+                animation-delay: 0.4s;
+            }
 
-        /* Estilo interactivo para el ecualizador de música */
-        .audio-bar {
-            transition: height 0.2s ease;
-        }
-        .playing .audio-bar {
-            animation: bounce 0.8s ease infinite alternate;
-        }
-        .playing .bar-1 { animation-delay: 0.1s; }
-        .playing .bar-2 { animation-delay: 0.3s; }
-        .playing .bar-3 { animation-delay: 0.2s; }
-        .playing .bar-4 { animation-delay: 0.4s; }
-
-        @keyframes bounce {
-            0% { height: 3px; }
-            100% { height: 18px; }
-        }
-    </style>
-</head>
-<body class="bg-terracotta-50 font-sans text-neutral-800 leading-relaxed overflow-x-hidden">
-
-    <!-- Reproductor de música sutil flotante en la esquina superior derecha -->
-    <div class="fixed top-4 right-4 z-50 flex items-center gap-2 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-full shadow-lg border border-terracotta-200/60">
-        <button id="musicToggleBtn" onclick="toggleMusic()" class="flex items-center gap-2 text-terracotta-600 hover:text-terracotta-700 transition duration-300">
-            <span class="text-xs uppercase tracking-[0.25em] font-bold font-sans">Música</span>
-            <div id="musicIndicator" class="flex items-end gap-[2.5px] w-5 h-5 justify-center">
-                <span class="audio-bar bar-1 w-[2.5px] h-[4px] bg-terracotta-500 rounded-full"></span>
-                <span class="audio-bar bar-2 w-[2.5px] h-[8px] bg-terracotta-500 rounded-full"></span>
-                <span class="audio-bar bar-3 w-[2.5px] h-[6px] bg-terracotta-500 rounded-full"></span>
-                <span class="audio-bar bar-4 w-[2.5px] h-[10px] bg-terracotta-500 rounded-full"></span>
+            @keyframes bounce {
+                0% {
+                    height: 3px;
+                }
+                100% {
+                    height: 18px;
+                }
+            }
+        </style>
+    </head>
+    <body class="bg-terracotta-50 font-sans text-neutral-800 leading-relaxed overflow-x-hidden">
+        <!-- Sección de Portada (Hero) -->
+        <header
+            class="relative min-h-screen flex flex-col items-center justify-between py-12 px-4 text-center overflow-hidden">
+            <!-- Fondo con imagen de los novios, optimizada con gradiente de color terracota/oro oscuro -->
+            <div class="absolute inset-0 z-0">
+                <img
+                    id="heroImage"
+                    src="ImagenPortada.jpg"
+                    class="w-full h-full object-cover object-center brightness-[0.65] contrast-[1.05]"
+                    alt="Elizabeth y José Luis - Portada"
+                    onerror="showImageFallback(this)" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-black/50 via-terracotta-950/45 to-terracotta-950/90"></div>
             </div>
-        </button>
-        <!-- Hermosa melodía clásica italiana/española para guitarra romántica -->
-        <audio id="ambientMusic" loop src="https://www.mfiles.co.uk/mp3-downloads/tarrega-adelita.mp3"></audio>
-    </div>
 
-    <!-- Sección de Portada (Hero) -->
-    <header class="relative min-h-screen flex flex-col items-center justify-between py-12 px-4 text-center overflow-hidden">
-        <!-- Fondo con imagen de los novios, optimizada con gradiente de color terracota/oro oscuro -->
-        <div class="absolute inset-0 z-0">
-            <img id="heroImage" src="ImagenPortada.jpg" 
-                 class="w-full h-full object-cover object-center brightness-[0.65] contrast-[1.05]" 
-                 alt="Elizabeth y José Luis - Portada"
-                 onerror="showImageFallback(this)">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-terracotta-950/45 to-terracotta-950/90"></div>
-        </div>
+            <!-- Marco dorado interior sumamente sofisticado -->
+            <div class="absolute inset-4 z-10 pointer-events-none border border-gold-200/30 rounded-lg"></div>
 
-        <!-- Marco dorado interior sumamente sofisticado -->
-        <div class="absolute inset-4 z-10 pointer-events-none border border-gold-200/30 rounded-lg"></div>
-
-        <!-- Elementos del cabezal -->
-        <div class="relative z-20 text-white animate-fade-gold mt-6">
-            <p class="text-sm md:text-base tracking-[0.35em] font-sans font-light uppercase text-gold-100 mb-2">¡Nuestra Boda!</p>
-            <div class="w-16 h-[1px] bg-gold-500 mx-auto opacity-70"></div>
-        </div>
-
-        <!-- Nombres y Título principal -->
-        <div class="relative z-20 my-auto text-white px-2">
-            <h1 class="font-serif text-5xl md:text-8xl lg:text-9xl font-light tracking-wide leading-none text-white mb-2">
-                Elizabeth <span class="block md:inline font-serif text-3xl md:text-6xl text-gold-200 italic my-2 md:my-0 md:mx-4">&</span> José Luis
-            </h1>
-            <div class="w-24 h-[1px] bg-gold-200/50 mx-auto my-6"></div>
-            <p class="font-serif text-xl md:text-2xl italic tracking-widest text-gold-100">
-                Sábado, 28 de Noviembre de 2026
-            </p>
-        </div>
-
-        <!-- Indicador de desplazamiento -->
-        <div class="relative z-20 text-white mb-4 animate-bounce">
-            <p class="text-xs uppercase tracking-[0.25em] text-terracotta-200 mb-2">Desliza para ver la invitación</p>
-            <i class="fa-solid fa-chevron-down text-gold-200 text-lg"></i>
-        </div>
-    </header>
-
-    <!-- Versículo/Frase de Amor -->
-    <section class="py-24 px-6 bg-creme-50 text-center relative">
-        <div class="max-w-3xl mx-auto">
-            <!-- Divisor botánico estilizado -->
-            <div class="text-terracotta-400 mb-6 text-2xl">
-                <i class="fa-solid fa-seedling"></i>
+            <!-- Elementos del cabezal -->
+            <div class="relative z-20 text-white animate-fade-gold mt-6">
+                <p class="text-sm md:text-base tracking-[0.35em] font-sans font-light uppercase text-gold-100 mb-2">
+                    ¡Nuestra Boda!
+                </p>
+                <div class="w-16 h-[1px] bg-gold-500 mx-auto opacity-70"></div>
             </div>
-            <h2 class="font-serif text-3xl md:text-4xl text-terracotta-700 italic font-light mb-6">
-                "El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."
-            </h2>
-            <p class="text-xs md:text-sm tracking-[0.2em] uppercase font-medium text-neutral-500 mb-12">- Antoine de Saint-Exupéry</p>
-            
-            <p class="font-sans text-neutral-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-                Hay momentos en la vida que son inolvidables, pero son perfectos cuando se comparten con las personas que han marcado una huella en nuestro camino.<br>
-                Después de tantas historias compartidas, risas y complicidad, hemos decidido dar el paso más importante de nuestras vidas.<br>
-                No nos imaginamos este día sin ustedes.<br>
-                ¡Queremos celebrar, brindar y bailar toda la noche con nuestra familia y amigos más queridos!
-            </p>
-        </div>
-    </section>
 
-    <!-- Cuenta Regresiva Activa en tiempo real -->
-    <section class="py-16 bg-gradient-to-br from-terracotta-600 to-terracotta-700 text-white relative">
-        <div class="absolute top-0 left-0 w-32 h-32 bg-white/5 rounded-full filter blur-2xl pointer-events-none"></div>
-        <div class="absolute bottom-0 right-0 w-48 h-48 bg-white/5 rounded-full filter blur-2xl pointer-events-none"></div>
-
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h3 class="font-serif text-2xl md:text-3xl italic tracking-widest text-gold-200 mb-8">Comienza la cuenta regresiva...</h3>
-            
-            <!-- Bloques del contador -->
-            <div class="grid grid-cols-4 gap-2 md:gap-6 max-w-xl mx-auto">
-                <!-- Días -->
-                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 md:p-6 border border-white/15 flex flex-col justify-center items-center shadow-md">
-                    <span id="countdown-days" class="font-serif text-3xl md:text-5xl font-bold text-gold-200">00</span>
-                    <span class="text-[10px] md:text-xs uppercase tracking-[0.15em] text-terracotta-200 mt-2">Días</span>
-                </div>
-                <!-- Horas -->
-                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 md:p-6 border border-white/15 flex flex-col justify-center items-center shadow-md">
-                    <span id="countdown-hours" class="font-serif text-3xl md:text-5xl font-bold text-gold-200">00</span>
-                    <span class="text-[10px] md:text-xs uppercase tracking-[0.15em] text-terracotta-200 mt-2">Hrs</span>
-                </div>
-                <!-- Minutos -->
-                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 md:p-6 border border-white/15 flex flex-col justify-center items-center shadow-md">
-                    <span id="countdown-minutes" class="font-serif text-3xl md:text-5xl font-bold text-gold-200">00</span>
-                    <span class="text-[10px] md:text-xs uppercase tracking-[0.15em] text-terracotta-200 mt-2">Min</span>
-                </div>
-                <!-- Segundos -->
-                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 md:p-6 border border-white/15 flex flex-col justify-center items-center shadow-md">
-                    <span id="countdown-seconds" class="font-serif text-3xl md:text-5xl font-bold text-gold-200">00</span>
-                    <span class="text-[10px] md:text-xs uppercase tracking-[0.15em] text-terracotta-200 mt-2">Seg</span>
-                </div>
-            </div>
-            <div class="py-12 px-6 bg-creme-50 text-center border-t border-b border-terracotta-100">
-    <div class="max-w-xl mx-auto">
-        <div class="text-gold-600 text-xl mb-3">
-            <i class="fa-regular fa-calendar-plus"></i>
-        </div>
-        <h3 class="font-serif text-2xl text-terracotta-700 tracking-wide mb-2">Agenda la Fecha</h3>
-        <p class="text-xs text-neutral-500 uppercase tracking-widest mb-6">Sábado, 28 de Noviembre de 2026 — 13:00 hrs</p>
-        
-        <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
-            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Elizabeth+%26+Luis&dates=20261128T130000/20261128T235900&details=%C2%A1Lleg%C3%B3+el+gran+d%C3%ADa%21+Acomp%C3%A1%C3%B1anos+a+celebrar+nuestra+boda.+Por+favor%2C+no+olvides+confirmar+tu+asistencia+en+la+invitaci%C3%B3n+digital.&location=Jard%C3%ADn+Nautilus%2C+Av.+de+los+Nautilos+%23120%2C+El+Fort%C3%ADn%2C+Zapopan%2C+Jal.&sf=true&output=xml" 
-               target="_blank" rel="noopener"
-               class="flex items-center justify-center gap-2 bg-white hover:bg-neutral-50 text-neutral-700 border border-neutral-200 py-3 px-5 rounded-xl text-xs uppercase tracking-wider font-semibold shadow-sm transition duration-300 w-full">
-                <i class="fa-brands fa-google text-red-500"></i> Google Calendar
-            </a>
-
-            <button onclick="downloadICS()" 
-                    class="flex items-center justify-center gap-2 bg-terracotta-600 hover:bg-terracotta-700 text-white py-3 px-5 rounded-xl text-xs uppercase tracking-wider font-semibold shadow-md transition duration-300 w-full">
-                <i class="fa-brand fa-apple text-lg"></i> Agregar a iPhone / iCal
-            </button>
-        </div>
-    </div>
-</div>
-
-<script>
-function downloadICS() {
-    // Configuración del evento en formato estándar iCalendar
-    const icsData = [
-        "BEGIN:VCALENDAR",
-        "VERSION:2.0",
-        "PRODID:-//Boda Elizabeth y Luis//Invitacion Digital//ES",
-        "BEGIN:VEVENT",
-        "UID:" + Date.now() + "@elizabethyluis.com",
-        "DTSTAMP:20260710T000000Z",
-        "DTSTART:20261128T130000", // 28 de Noviembre 2026, 13:00
-        "DTEND:20261128T235900",   // Fin del evento sugerido
-        "SUMMARY:Boda Elizabeth & Luis",
-        "DESCRIPTION:¡Llegó el gran día! Acompáñanos a celebrar nuestra boda. Por favor, no olvides confirmar tu asistencia en la invitación digital.",
-        "LOCATION:Jardín Nautilus, Av. de los Nautilos #120, El Fortín, Zapopan, Jal.",
-        "END:VEVENT",
-        "END:VCALENDAR"
-    ].join("\n");
-
-    // Crear un elemento descargable en el navegador de forma invisible
-    const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
-    const link = document.createElement('a');
-    link.href = window.URL.createObjectURL(blob);
-    link.setAttribute('download', 'Boda_Elizabeth_y_Luis.ics');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
-</script>
-        </div>
-    </section>
-
-    <!-- Nombres de los Padres -->
-    <section class="py-20 px-6 bg-creme-100/50">
-        <div class="max-w-4xl mx-auto text-center">
-            <h3 class="font-serif text-3xl text-terracotta-700 tracking-wide mb-12">Con la bendición de nuestros Padres</h3>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl mx-auto">
-                <!-- Padres de la Novia -->
-                <div class="p-8 bg-white rounded-2xl shadow-sm border border-terracotta-100 flex flex-col items-center">
-                    <span class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-4">Padres de la Novia</span>
-                    <p class="font-serif text-xl text-neutral-800 font-medium">David Urueta Sanchez</p>
-                    <p class="font-serif text-xl text-neutral-800 font-medium mt-1">Martha Manzanarez Miranda</p>
-                </div>
-                
-                <!-- Padres del Novio -->
-                <div class="p-8 bg-white rounded-2xl shadow-sm border border-terracotta-100 flex flex-col items-center">
-                    <span class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-4">Padres del Novio</span>
-                    <p class="font-serif text-xl text-neutral-800 font-medium">José Martin Colmenero Maldonado</p>
-                    <p class="font-serif text-xl text-neutral-800 font-medium mt-1">Lorena Huerta Lino</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ubicación, Fecha y Hospedaje -->
-    <section class="py-20 px-6 bg-white text-center relative" id="locations">
-        <div class="max-w-6xl mx-auto">
-            <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3">Lugar y Fecha</span>
-            <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-16">Ubicación y Hospedaje</h2>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
-                <!-- Tarjeta Principal de Ceremonia y Recepción -->
-                <div class="lg:col-span-2 bg-creme-50 rounded-3xl p-8 border border-terracotta-200/50 hover:shadow-md transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <!-- Imagen del Jardín Nautilus -->
-                        <div class="w-full h-80 rounded-2xl overflow-hidden mb-6 relative shadow-inner bg-terracotta-100">
-                            <img src="image_4a70f6.jpg" 
-                                 class="w-full h-full object-cover object-[center_60%] brightness-[0.95] contrast-[1.05]" 
-                                 alt="Salón Jardín Nautilus"
-                                 onerror="showImageFallback(this, 'Jardín Nautilus')">
-                            <span class="absolute top-4 left-4 bg-terracotta-600 text-white text-[10px] uppercase tracking-widest px-3.5 py-1.5 rounded-full font-bold shadow-sm">Ubicación Oficial</span>
-                        </div>
-                        
-                        <h3 class="font-serif text-3xl text-terracotta-700 mb-4">Jardín Nautilus</h3>
-                        
-                        <!-- Horarios y Programa -->
-                        <div class="space-y-4 mb-6 border-l-2 border-terracotta-300 pl-4 py-1">
-                            <div>
-                                <h4 class="font-serif text-lg font-bold text-neutral-800 flex items-center gap-2">
-                                    <span class="w-2.5 h-2.5 bg-gold-500 rounded-full"></span> Ceremonia Religiosa
-                                </h4>
-                                <p class="text-neutral-500 text-sm"><i class="fa-regular fa-clock mr-1 text-gold-500"></i> 17:00 hrs</p>
-                            </div>
-                            <div>
-                                <h4 class="font-serif text-lg font-bold text-neutral-800 flex items-center gap-2">
-                                    <span class="w-2.5 h-2.5 bg-terracotta-500 rounded-full"></span> Recepción y Banquete
-                                </h4>
-                                <p class="text-neutral-500 text-sm"><i class="fa-regular fa-clock mr-1 text-gold-500"></i> 19:00 hrs</p>
-                            </div>
-                        </div>
-
-                        <p class="text-neutral-600 text-sm mb-6 leading-relaxed">
-                            <i class="fa-solid fa-location-dot mr-2 text-terracotta-500"></i> Av. de los Nautilos #120, El Fortín, Zapopan, Jal.
-                        </p>
-                    </div>
-                    
-                    <a href="https://maps.app.goo.gl/A4WXrArPkUNoM2R29" target="_blank" rel="noopener" class="w-full text-center inline-block bg-terracotta-500 hover:bg-terracotta-600 text-white text-xs uppercase tracking-widest font-semibold py-4 px-6 rounded-xl shadow-md transition duration-300">
-                        <i class="fa-solid fa-map-location-dot mr-2"></i> Ver en Google Maps
-                    </a>
-                </div>
-
-                <!-- Tarjeta de Hospedaje Recomendado -->
-                <div class="bg-creme-50 rounded-3xl p-8 border border-terracotta-200/50 hover:shadow-md transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <!-- Imagen de la Hostería San Carlos -->
-                        <div class="w-full h-80 rounded-2xl overflow-hidden mb-6 relative bg-terracotta-100">
-                            <img src="image_4a77fc.jpg" 
-                                 class="w-full h-full object-cover object-[center_30%] brightness-[0.95]" 
-                                 alt="Hostería San Carlos"
-                                 onerror="showImageFallback(this, 'Hostería San Carlos')">
-                            <span class="absolute top-4 left-4 bg-sage-500 text-white text-[10px] uppercase tracking-widest px-3.5 py-1.5 rounded-full font-bold shadow-sm">Estancia Recomendada</span>
-                        </div>
-
-                        <h3 class="font-serif text-2xl text-neutral-800 mb-2">Hostería San Carlos</h3>
-                        <p class="text-neutral-500 text-xs mb-4">Tarifa de convenio para invitados</p>
-                        <p class="text-neutral-600 text-xs md:text-sm mb-6 leading-relaxed">
-                            Para tu mayor comodidad el día de la boda, te sugerimos reservar tu habitación con anticipación, mencionando el código del enlace.
-                        </p>
-                    </div>
-                    
-                    <a href="https://maps.app.goo.gl/s5few7WcreDam2o19" target="_blank" rel="noopener" class="w-full text-center inline-block bg-sage-500 hover:bg-sage-800 text-white text-xs uppercase tracking-widest font-semibold py-4 px-6 rounded-xl shadow-md transition duration-300">
-                        <i class="fa-solid fa-hotel mr-2"></i> Ver Ubicación del Hotel
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Itinerario de Eventos -->
-    <section class="py-20 px-6 bg-creme-50 relative overflow-hidden">
-        <div class="absolute -right-24 top-1/4 opacity-5 text-neutral-800 text-[15rem] pointer-events-none">
-            <i class="fa-solid fa-leaf"></i>
-        </div>
-
-        <div class="max-w-3xl mx-auto relative z-10 text-center">
-            <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3">El Protocolo</span>
-            <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-16">Itinerario del Gran Día</h2>
-
-            <!-- Línea de tiempo elegante -->
-            <div class="relative border-l border-terracotta-300 mx-auto max-w-lg text-left pl-6 md:pl-10 space-y-12">
-                <!-- Paso 1 -->
-                <div class="relative">
-                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-terracotta-500 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs shadow-md font-bold">
-                        1
-                    </span>
-                    <h4 class="font-serif text-xl font-semibold text-terracotta-700">17:00 hrs - Ceremonia de Unión</h4>
-                    <p class="text-xs md:text-sm text-neutral-600 mt-2">Daremos inicio a nuestra unión religiosa formal en los jardines de Jardín Nautilus. Solicitamos puntualidad de todos los invitados.</p>
-                </div>
-
-                <!-- Paso 2 -->
-                <div class="relative">
-                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-terracotta-500 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs shadow-md font-bold">
-                        2
-                    </span>
-                    <h4 class="font-serif text-xl font-semibold text-terracotta-700">18:15 hrs - Cóctel de Bienvenida</h4>
-                    <p class="text-xs md:text-sm text-neutral-600 mt-2">Disfrutaremos un agradable brindis de cortesía mientras nos preparamos para entrar al salón principal.</p>
-                </div>
-
-                <!-- Paso 3 -->
-                <div class="relative">
-                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-terracotta-500 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs shadow-md font-bold">
-                        3
-                    </span>
-                    <h4 class="font-serif text-xl font-semibold text-terracotta-700">19:00 hrs - Banquete de Bodas</h4>
-                    <p class="text-xs md:text-sm text-neutral-600 mt-2">Cena formal de tres tiempos especialmente diseñada para celebrar con nuestros amigos más queridos.</p>
-                </div>
-
-                <!-- Paso 4 -->
-                <div class="relative">
-                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-terracotta-500 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs shadow-md font-bold">
-                        4
-                    </span>
-                    <h4 class="font-serif text-xl font-semibold text-terracotta-700">21:00 hrs - El Gran Vals y Baile</h4>
-                    <p class="text-xs md:text-sm text-neutral-600 mt-2">¡Es momento de bailar! Abriremos pista con nuestro primer vals oficial y daremos paso a la celebración.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Código de Vestimenta -->
-    <section class="py-20 px-6 bg-white text-center">
-        <div class="max-w-4xl mx-auto">
-            <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3">Código de Vestimenta</span>
-            <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-8">Formal</h2>
-            <p class="text-neutral-600 max-w-xl mx-auto text-sm md:text-base mb-12 leading-relaxed">
-                Queremos que luzcas espectacular en nuestra boda. Solicitamos a todos nuestros apreciables invitados vestir de etiqueta formal, prefiriendo la elegancia y sutilidad de los <strong>tonos oscuros</strong>.
-            </p>
-
-            <!-- Paleta de Colores Sugeridos -->
-            <div class="bg-creme-50 p-8 rounded-3xl border border-terracotta-100 max-w-2xl mx-auto shadow-sm">
-                <span class="text-xs uppercase tracking-widest text-gold-600 font-bold block mb-6">Paleta de Colores Recomendada (Oscuros)</span>
-                
-                <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
-                    <!-- Color 1 -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-14 h-14 rounded-full bg-[#1D2A44] shadow-md border-2 border-white"></div>
-                        <span class="text-[11px] font-medium tracking-wide text-neutral-500 mt-3">Azul Marino</span>
-                    </div>
-                    <!-- Color 2 (Actualizado a Marrón Chocolate Oscuro) -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-14 h-14 rounded-full bg-[#4A2211] shadow-md border-2 border-white"></div>
-                        <span class="text-[11px] font-medium tracking-wide text-neutral-500 mt-3">Marrón Oscuro</span>
-                    </div>
-                    <!-- Color 3 -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-14 h-14 rounded-full bg-[#1E3F20] shadow-md border-2 border-white"></div>
-                        <span class="text-[11px] font-medium tracking-wide text-neutral-500 mt-3">Verde Pino</span>
-                    </div>
-                    <!-- Color 4 -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-14 h-14 rounded-full bg-[#2C3539] shadow-md border-2 border-white"></div>
-                        <span class="text-[11px] font-medium tracking-wide text-neutral-500 mt-3">Gris Oxford</span>
-                    </div>
-                    <!-- Color 5 -->
-                    <div class="flex flex-col items-center col-span-2 sm:col-span-1">
-                        <div class="w-14 h-14 rounded-full bg-[#171717] shadow-md border-2 border-white mx-auto"></div>
-                        <span class="text-[11px] font-medium tracking-wide text-neutral-500 mt-3">Negro Riguroso</span>
-                    </div>
-                </div>
-
-                <!-- Notas y restricciones amables -->
-                <div class="mt-8 pt-6 border-t border-terracotta-200/50 text-xs text-neutral-500 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-circle-info text-terracotta-500 text-sm"></i>
-                    <span>Nota: Amablemente sugerimos considerar <strong>omitir el rojo, blanco y perla</strong>.</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mesa de Regalos -->
-    <section class="py-20 px-6 bg-creme-100/40 text-center">
-        <div class="max-w-4xl mx-auto">
-            <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3">Mesa de Regalos</span>
-            <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-8">Nuestros Registros</h2>
-            <p class="text-neutral-600 max-w-xl mx-auto text-sm md:text-base mb-12 leading-relaxed">
-                El mejor regalo que podemos recibir es tu presencia en este nuevo capítulo de nuestras vidas, pero si gustas tener un detalle de bodas, te compartimos nuestras sugerencias.
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-                <!-- Liverpool -->
-                <div class="bg-white rounded-2xl p-6 border border-terracotta-200/50 flex flex-col justify-between items-center shadow-sm hover:shadow-md transition duration-300">
-                    <div class="w-12 h-12 rounded-full bg-terracotta-100 flex items-center justify-center text-terracotta-600 mb-4 text-xl">
-                        <i class="fa-solid fa-store"></i>
-                    </div>
-                    <h3 class="font-serif text-lg font-bold text-neutral-800 mb-2">Liverpool</h3>
-                    <p class="text-xs text-neutral-500 mb-6">Mesa de regalos física u online</p>
-                    <div class="w-full text-center py-2 px-3 bg-terracotta-50 text-terracotta-700 font-sans text-xs font-semibold rounded-lg tracking-wider mb-4 border border-terracotta-100">
-                        Nº Evento: 509231
-                    </div>
-                    <button onclick="copyText('509231', this)" class="text-xs text-gold-600 hover:text-gold-700 font-bold uppercase tracking-wider flex items-center gap-1 transition">
-                        <i class="fa-regular fa-copy"></i> Copiar Código
-                    </button>
-                </div>
-
-                <!-- Amazon -->
-                <div class="bg-white rounded-2xl p-6 border border-terracotta-200/50 flex flex-col justify-between items-center shadow-sm hover:shadow-md transition duration-300">
-                    <div class="w-12 h-12 rounded-full bg-terracotta-100 flex items-center justify-center text-terracotta-600 mb-4 text-xl">
-                        <i class="fa-brands fa-amazon"></i>
-                    </div>
-                    <h3 class="font-serif text-lg font-bold text-neutral-800 mb-2">Amazon</h3>
-                    <p class="text-xs text-neutral-500 mb-6">Lista de deseos digital</p>
-                    <div class="w-full text-center py-2 px-3 bg-terracotta-50 text-terracotta-700 font-sans text-xs font-semibold rounded-lg tracking-wider mb-4 border border-terracotta-100">
-                        Boda Elizabeth y José Luis
-                    </div>
-                    <a href="https://amazon.com" target="_blank" rel="noopener" class="text-xs text-gold-600 hover:text-gold-700 font-bold uppercase tracking-wider flex items-center gap-1 transition">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver la Lista
-                    </a>
-                </div>
-
-                <!-- Transferencia Directa -->
-                <div class="bg-white rounded-2xl p-6 border border-terracotta-200/50 col-span-1 sm:col-span-2 md:col-span-1 flex flex-col justify-between items-center shadow-sm hover:shadow-md transition duration-300 mx-auto w-full">
-                    <div class="w-12 h-12 rounded-full bg-terracotta-100 flex items-center justify-center text-terracotta-600 mb-4 text-xl">
-                        <i class="fa-solid fa-credit-card"></i>
-                    </div>
-                    <h3 class="font-serif text-lg font-bold text-neutral-800 mb-2">Aportación CLABE</h3>
-                    <p class="text-xs text-neutral-500 mb-6">Aportaciones seguras directas</p>
-                    <div class="w-full text-center py-2 px-3 bg-terracotta-50 text-terracotta-700 font-sans text-xs font-semibold rounded-lg tracking-wider mb-4 border border-terracotta-100 truncate">
-                        0121 8000 4567 8901 23
-                    </div>
-                    <button onclick="copyText('012180004567890123', this)" class="text-xs text-gold-600 hover:text-gold-700 font-bold uppercase tracking-wider flex items-center gap-1 transition">
-                        <i class="fa-regular fa-copy"></i> Copiar CLABE
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Confirmación RSVP Interactiva -->
-    <section class="py-20 px-6 bg-white relative" id="rsvp">
-        <div class="absolute left-4 top-1/2 -translate-y-1/2 opacity-5 text-[10rem] pointer-events-none">
-            <i class="fa-solid fa-seedling"></i>
-        </div>
-
-        <div class="max-w-2xl mx-auto relative z-10">
-            <div class="text-center mb-12">
-                <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3">R.S.V.P</span>
-                <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-4">Confirma tu Asistencia</h2>
-                <p class="text-neutral-500 text-sm md:text-base max-w-lg mx-auto">
-                    Agradecemos confirmar tu asistencia antes del <strong class="text-terracotta-600">15 de Octubre de 2026</strong> para coordinar de forma óptima cada detalle del banquete.
+            <!-- Nombres y Título principal -->
+            <div class="relative z-20 my-auto text-white px-2">
+                <h1
+                    class="font-serif text-5xl md:text-8xl lg:text-9xl font-light tracking-wide leading-none text-white mb-2">
+                    Elizabeth
+                    <span
+                        class="block md:inline font-serif text-3xl md:text-6xl text-gold-200 italic my-2 md:my-0 md:mx-4"
+                        >&</span
+                    >
+                    José Luis
+                </h1>
+                <div class="w-24 h-[1px] bg-gold-200/50 mx-auto my-6"></div>
+                <p class="font-serif text-xl md:text-2xl italic tracking-widest text-gold-100">
+                    Sábado, 28 de Noviembre de 2026
                 </p>
             </div>
 
-            <!-- Formulario RSVP -->
-            <div class="bg-creme-50 rounded-3xl p-8 md:p-10 border border-terracotta-200/60 shadow-lg relative overflow-hidden">
-                <div class="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-terracotta-400 via-gold-500 to-terracotta-600"></div>
+            <!-- Indicador de desplazamiento -->
+            <div class="relative z-20 text-white mb-4 animate-bounce">
+                <p class="text-xs uppercase tracking-[0.25em] text-terracotta-200 mb-2">
+                    Desliza para ver la invitación
+                </p>
+                <i class="fa-solid fa-chevron-down text-gold-200 text-lg"></i>
+            </div>
+        </header>
 
-                <form id="rsvpForm" onsubmit="handleRSVPSubmit(event)" class="space-y-6">
-                    <!-- Nombre del Invitado -->
-                    <div>
-                        <label for="guest-name" class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-2">Nombre Completo</label>
-                        <input type="text" id="guest-name" required placeholder="Escribe tu nombre y apellido"
-                               class="w-full px-4 py-3 rounded-xl border border-terracotta-200 focus:ring-2 focus:ring-terracotta-400 focus:outline-none bg-white text-sm transition duration-200">
+        <!-- Versículo/Frase de Amor -->
+        <section class="py-24 px-6 bg-creme-50 text-center relative">
+            <div class="max-w-3xl mx-auto">
+                <!-- Divisor botánico estilizado -->
+                <div class="text-terracotta-400 mb-6 text-2xl">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <h2 class="font-serif text-3xl md:text-4xl text-terracotta-700 italic font-light mb-6">
+                    "El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."
+                </h2>
+                <p class="text-xs md:text-sm tracking-[0.2em] uppercase font-medium text-neutral-500 mb-12">
+                    - Antoine de Saint-Exupéry
+                </p>
+
+                <p class="font-sans text-neutral-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+                    Hay momentos en la vida que son inolvidables, pero son perfectos cuando se comparten con las
+                    personas que han marcado una huella en nuestro camino.<br />
+                    Después de tantas historias compartidas, risas y complicidad, hemos decidido dar el paso más
+                    importante de nuestras vidas.<br />
+                    No nos imaginamos este día sin ustedes.<br />
+                    ¡Queremos celebrar, brindar y bailar toda la noche con nuestra familia y amigos más queridos!
+                </p>
+            </div>
+        </section>
+
+        <!-- Cuenta Regresiva Activa en tiempo real -->
+        <section class="py-16 bg-gradient-to-br from-terracotta-600 to-terracotta-700 text-white relative">
+            <div
+                class="absolute top-0 left-0 w-32 h-32 bg-white/5 rounded-full filter blur-2xl pointer-events-none"></div>
+            <div
+                class="absolute bottom-0 right-0 w-48 h-48 bg-white/5 rounded-full filter blur-2xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+                <h3 class="font-serif text-2xl md:text-3xl italic tracking-widest text-gold-200 mb-8">
+                    Comienza la cuenta regresiva...
+                </h3>
+
+                <!-- Bloques del contador -->
+                <div class="grid grid-cols-4 gap-2 md:gap-6 max-w-xl mx-auto">
+                    <!-- Días -->
+                    <div
+                        class="bg-white/10 backdrop-blur-md rounded-2xl p-3 md:p-6 border border-white/15 flex flex-col justify-center items-center shadow-md">
+                        <span id="countdown-days" class="font-serif text-3xl md:text-5xl font-bold text-gold-200"
+                            >00</span
+                        >
+                        <span class="text-[10px] md:text-xs uppercase tracking-[0.15em] text-terracotta-200 mt-2"
+                            >Días</span
+                        >
+                    </div>
+                    <!-- Horas -->
+                    <div
+                        class="bg-white/10 backdrop-blur-md rounded-2xl p-3 md:p-6 border border-white/15 flex flex-col justify-center items-center shadow-md">
+                        <span id="countdown-hours" class="font-serif text-3xl md:text-5xl font-bold text-gold-200"
+                            >00</span
+                        >
+                        <span class="text-[10px] md:text-xs uppercase tracking-[0.15em] text-terracotta-200 mt-2"
+                            >Hrs</span
+                        >
+                    </div>
+                    <!-- Minutos -->
+                    <div
+                        class="bg-white/10 backdrop-blur-md rounded-2xl p-3 md:p-6 border border-white/15 flex flex-col justify-center items-center shadow-md">
+                        <span id="countdown-minutes" class="font-serif text-3xl md:text-5xl font-bold text-gold-200"
+                            >00</span
+                        >
+                        <span class="text-[10px] md:text-xs uppercase tracking-[0.15em] text-terracotta-200 mt-2"
+                            >Min</span
+                        >
+                    </div>
+                    <!-- Segundos -->
+                    <div
+                        class="bg-white/10 backdrop-blur-md rounded-2xl p-3 md:p-6 border border-white/15 flex flex-col justify-center items-center shadow-md">
+                        <span id="countdown-seconds" class="font-serif text-3xl md:text-5xl font-bold text-gold-200"
+                            >00</span
+                        >
+                        <span class="text-[10px] md:text-xs uppercase tracking-[0.15em] text-terracotta-200 mt-2"
+                            >Seg</span
+                        >
+                    </div>
+                </div>
+                
+                <div class="py-6 px-6 text-center">
+                    <div class="max-w-xl mx-auto">
+                        <div class="text-gold-600 text-xl mb-3">
+                            <i class="fa-regular fa-calendar-plus"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl md:text-3xl italic tracking-widest text-gold-200 mb-4">Agenda la Fecha</h3>
+                        <p class="text-[12px] md:text-xs uppercase tracking-[0.15em] text-terracotta-200 mt-2 py-3">
+                            Sábado, 28 de Noviembre de 2026 — 13:00 hrs
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+                            <a
+                                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Elizabeth+%26+Luis&dates=20261128T130000/20261128T235900&details=%C2%A1Lleg%C3%B3+el+gran+d%C3%ADa%21+Acomp%C3%A1%C3%B1anos+a+celebrar+nuestra+boda.+Por+favor%2C+no+olvides+confirmar+tu+asistencia+en+la+invitaci%C3%B3n+digital.&location=Jard%C3%ADn+Nautilus%2C+Av.+de+los+Nautilos+%23120%2C+El+Fort%C3%ADn%2C+Zapopan%2C+Jal.&sf=true&output=xml"
+                                target="_blank"
+                                rel="noopener"
+                                class="flex items-center justify-center gap-2 bg-terracotta-600 hover:bg-terracotta-700 text-white py-3 px-5 rounded-xl text-xs uppercase tracking-wider font-semibold shadow-md transition duration-300 w-full">
+                                <i class="fa-brands fa-google"></i> Google Calendar
+                            </a>
+
+                            <button
+                                onclick="downloadICS()"
+                                class="flex items-center justify-center gap-2 bg-terracotta-600 hover:bg-terracotta-700 text-white py-3 px-5 rounded-xl text-xs uppercase tracking-wider font-semibold shadow-md transition duration-300 w-full">
+                                <i class="fa-brands fa-apple text-lg"></i> Agregar a iPhone
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function downloadICS() {
+                        // Configuración del evento en formato estándar iCalendar
+                        const icsData = [
+                            "BEGIN:VCALENDAR",
+                            "VERSION:2.0",
+                            "PRODID:-//Boda Elizabeth y Luis//Invitacion Digital//ES",
+                            "BEGIN:VEVENT",
+                            "UID:" + Date.now() + "@elizabethyluis.com",
+                            "DTSTAMP:20260710T000000Z",
+                            "DTSTART:20261128T130000", // 28 de Noviembre 2026, 13:00
+                            "DTEND:20261128T235900", // Fin del evento sugerido
+                            "SUMMARY:Boda Elizabeth & Luis",
+                            "DESCRIPTION:¡Llegó el gran día! Acompáñanos a celebrar nuestra boda. Por favor, no olvides confirmar tu asistencia en la invitación digital.",
+                            "LOCATION:Jardín Nautilus, Av. de los Nautilos #120, El Fortín, Zapopan, Jal.",
+                            "END:VEVENT",
+                            "END:VCALENDAR"
+                        ].join("\n");
+
+                        // Crear un elemento descargable en el navegador de forma invisible
+                        const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
+                        const link = document.createElement("a");
+                        link.href = window.URL.createObjectURL(blob);
+                        link.setAttribute("download", "Boda_Elizabeth_y_Luis.ics");
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    }
+                </script>
+            </div>
+        </section>
+
+        <!-- Nombres de los Padres -->
+        <section class="py-20 px-6 bg-creme-100/50">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="font-serif text-3xl text-terracotta-700 tracking-wide mb-12">
+                    Con la bendición de nuestros Padres
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl mx-auto">
+                    <!-- Padres de la Novia -->
+                    <div
+                        class="p-8 bg-white rounded-2xl shadow-sm border border-terracotta-100 flex flex-col items-center">
+                        <span class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-4"
+                            >Padres de la Novia</span
+                        >
+                        <p class="font-serif text-xl text-neutral-800 font-medium">David Urueta Sanchez</p>
+                        <p class="font-serif text-xl text-neutral-800 font-medium mt-1">Martha Manzanarez Miranda</p>
                     </div>
 
-                    <!-- Asistencia Si/No -->
-                    <div>
-                        <span class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-3">¿Nos Acompañarás?</span>
-                        <div class="grid grid-cols-2 gap-4">
-                            <label class="flex items-center justify-center gap-2 p-4 bg-white border border-terracotta-200 rounded-xl cursor-pointer hover:border-terracotta-400 transition-all">
-                                <input type="radio" name="attendance" value="si" required class="accent-terracotta-500 h-4 w-4">
-                                <span class="text-sm font-semibold text-neutral-700">Sí, con gusto</span>
-                            </label>
-                            <label class="flex items-center justify-center gap-2 p-4 bg-white border border-terracotta-200 rounded-xl cursor-pointer hover:border-terracotta-400 transition-all">
-                                <input type="radio" name="attendance" value="no" required class="accent-terracotta-500 h-4 w-4">
-                                <span class="text-sm font-semibold text-neutral-700">No podré asistir</span>
-                            </label>
+                    <!-- Padres del Novio -->
+                    <div
+                        class="p-8 bg-white rounded-2xl shadow-sm border border-terracotta-100 flex flex-col items-center">
+                        <span class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-4"
+                            >Padres del Novio</span
+                        >
+                        <p class="font-serif text-xl text-neutral-800 font-medium">José Martin Colmenero Maldonado</p>
+                        <p class="font-serif text-xl text-neutral-800 font-medium mt-1">Lorena Huerta Lino</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ubicación, Fecha y Hospedaje -->
+        <section class="py-20 px-6 bg-white text-center relative" id="locations">
+            <div class="max-w-6xl mx-auto">
+                <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3"
+                    >Lugar y Fecha</span
+                >
+                <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-16">Ubicación y Hospedaje</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
+                    <!-- Tarjeta Principal de Ceremonia y Recepción -->
+                    <div
+                        class="lg:col-span-2 bg-creme-50 rounded-3xl p-8 border border-terracotta-200/50 hover:shadow-md transition duration-300 flex flex-col justify-between">
+                        <div>
+                            <!-- Imagen del Jardín Nautilus -->
+                            <div
+                                class="w-full h-80 rounded-2xl overflow-hidden mb-6 relative shadow-inner bg-terracotta-100">
+                                <img
+                                    src="image_4a70f6.jpg"
+                                    class="w-full h-full object-cover object-[center_60%] brightness-[0.95] contrast-[1.05]"
+                                    alt="Salón Jardín Nautilus"
+                                    onerror="showImageFallback(this, 'Jardín Nautilus')" />
+                                <span
+                                    class="absolute top-4 left-4 bg-terracotta-600 text-white text-[10px] uppercase tracking-widest px-3.5 py-1.5 rounded-full font-bold shadow-sm"
+                                    >Ubicación Oficial</span
+                                >
+                            </div>
+
+                            <h3 class="font-serif text-3xl text-terracotta-700 mb-4">Jardín Nautilus</h3>
+
+                            <!-- Horarios y Programa -->
+                            <div class="space-y-4 mb-6 border-l-2 border-terracotta-300 pl-4 py-1">
+                                <div>
+                                    <h4 class="font-serif text-lg font-bold text-neutral-800 flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 bg-gold-500 rounded-full"></span> Ceremonia Religiosa
+                                    </h4>
+                                    <p class="text-neutral-500 text-sm">
+                                        <i class="fa-regular fa-clock mr-1 text-gold-500"></i> 17:00 hrs
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif text-lg font-bold text-neutral-800 flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 bg-terracotta-500 rounded-full"></span> Recepción y
+                                        Banquete
+                                    </h4>
+                                    <p class="text-neutral-500 text-sm">
+                                        <i class="fa-regular fa-clock mr-1 text-gold-500"></i> 19:00 hrs
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="text-neutral-600 text-sm mb-6 leading-relaxed">
+                                <i class="fa-solid fa-location-dot mr-2 text-terracotta-500"></i> Av. de los Nautilos
+                                #120, El Fortín, Zapopan, Jal.
+                            </p>
+                        </div>
+
+                        <a
+                            href="https://maps.app.goo.gl/A4WXrArPkUNoM2R29"
+                            target="_blank"
+                            rel="noopener"
+                            class="w-full text-center inline-block bg-terracotta-500 hover:bg-terracotta-600 text-white text-xs uppercase tracking-widest font-semibold py-4 px-6 rounded-xl shadow-md transition duration-300">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i> Ver en Google Maps
+                        </a>
+                    </div>
+
+                    <!-- Tarjeta de Hospedaje Recomendado -->
+                    <div
+                        class="bg-creme-50 rounded-3xl p-8 border border-terracotta-200/50 hover:shadow-md transition duration-300 flex flex-col justify-between">
+                        <div>
+                            <!-- Imagen de la Hostería San Carlos -->
+                            <div class="w-full h-80 rounded-2xl overflow-hidden mb-6 relative bg-terracotta-100">
+                                <img
+                                    src="image_4a77fc.jpg"
+                                    class="w-full h-full object-cover object-[center_30%] brightness-[0.95]"
+                                    alt="Hostería San Carlos"
+                                    onerror="showImageFallback(this, 'Hostería San Carlos')" />
+                                <span
+                                    class="absolute top-4 left-4 bg-sage-500 text-white text-[10px] uppercase tracking-widest px-3.5 py-1.5 rounded-full font-bold shadow-sm"
+                                    >Estancia Recomendada</span
+                                >
+                            </div>
+
+                            <h3 class="font-serif text-2xl text-neutral-800 mb-2">Hostería San Carlos</h3>
+                            <p class="text-neutral-500 text-xs mb-4">Tarifa de convenio para invitados</p>
+                            <p class="text-neutral-600 text-xs md:text-sm mb-6 leading-relaxed">
+                                Para tu mayor comodidad el día de la boda, te sugerimos reservar tu habitación con
+                                anticipación, mencionando el código del enlace.
+                            </p>
+                        </div>
+
+                        <a
+                            href="https://maps.app.goo.gl/s5few7WcreDam2o19"
+                            target="_blank"
+                            rel="noopener"
+                            class="w-full text-center inline-block bg-sage-500 hover:bg-sage-800 text-white text-xs uppercase tracking-widest font-semibold py-4 px-6 rounded-xl shadow-md transition duration-300">
+                            <i class="fa-solid fa-hotel mr-2"></i> Ver Ubicación del Hotel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Itinerario de Eventos -->
+        <section class="py-20 px-6 bg-creme-50 relative overflow-hidden">
+            <div class="absolute -right-24 top-1/4 opacity-5 text-neutral-800 text-[15rem] pointer-events-none">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div class="max-w-3xl mx-auto relative z-10 text-center">
+                <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3"
+                    >El Protocolo</span
+                >
+                <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-16">Itinerario del Gran Día</h2>
+
+                <!-- Línea de tiempo elegante -->
+                <div
+                    class="relative border-l border-terracotta-300 mx-auto max-w-lg text-left pl-6 md:pl-10 space-y-12">
+                    <!-- Paso 1 -->
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[35px] md:-left-[51px] top-1 bg-terracotta-500 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs shadow-md font-bold">
+                            1
+                        </span>
+                        <h4 class="font-serif text-xl font-semibold text-terracotta-700">
+                            17:00 hrs - Ceremonia de Unión
+                        </h4>
+                        <p class="text-xs md:text-sm text-neutral-600 mt-2">
+                            Daremos inicio a nuestra unión religiosa formal en los jardines de Jardín Nautilus.
+                            Solicitamos puntualidad de todos los invitados.
+                        </p>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[35px] md:-left-[51px] top-1 bg-terracotta-500 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs shadow-md font-bold">
+                            2
+                        </span>
+                        <h4 class="font-serif text-xl font-semibold text-terracotta-700">
+                            18:15 hrs - Cóctel de Bienvenida
+                        </h4>
+                        <p class="text-xs md:text-sm text-neutral-600 mt-2">
+                            Disfrutaremos un agradable brindis de cortesía mientras nos preparamos para entrar al salón
+                            principal.
+                        </p>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[35px] md:-left-[51px] top-1 bg-terracotta-500 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs shadow-md font-bold">
+                            3
+                        </span>
+                        <h4 class="font-serif text-xl font-semibold text-terracotta-700">
+                            19:00 hrs - Banquete de Bodas
+                        </h4>
+                        <p class="text-xs md:text-sm text-neutral-600 mt-2">
+                            Cena formal de tres tiempos especialmente diseñada para celebrar con nuestros amigos más
+                            queridos.
+                        </p>
+                    </div>
+
+                    <!-- Paso 4 -->
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[35px] md:-left-[51px] top-1 bg-terracotta-500 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs shadow-md font-bold">
+                            4
+                        </span>
+                        <h4 class="font-serif text-xl font-semibold text-terracotta-700">
+                            21:00 hrs - El Gran Vals y Baile
+                        </h4>
+                        <p class="text-xs md:text-sm text-neutral-600 mt-2">
+                            ¡Es momento de bailar! Abriremos pista con nuestro primer vals oficial y daremos paso a la
+                            celebración.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Código de Vestimenta -->
+        <section class="py-20 px-6 bg-white text-center">
+            <div class="max-w-4xl mx-auto">
+                <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3"
+                    >Código de Vestimenta</span
+                >
+                <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-8">Formal</h2>
+                <p class="text-neutral-600 max-w-xl mx-auto text-sm md:text-base mb-12 leading-relaxed">
+                    Queremos que luzcas espectacular en nuestra boda. Solicitamos a todos nuestros apreciables invitados
+                    vestir de etiqueta formal, prefiriendo la elegancia y sutilidad de los
+                    <strong>tonos oscuros</strong>.
+                </p>
+
+                <!-- Paleta de Colores Sugeridos -->
+                <div class="bg-creme-50 p-8 rounded-3xl border border-terracotta-100 max-w-2xl mx-auto shadow-sm">
+                    <span class="text-xs uppercase tracking-widest text-gold-600 font-bold block mb-6"
+                        >Paleta de Colores Recomendada (Oscuros)</span
+                    >
+
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                        <!-- Color 1 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-14 h-14 rounded-full bg-[#1D2A44] shadow-md border-2 border-white"></div>
+                            <span class="text-[11px] font-medium tracking-wide text-neutral-500 mt-3">Azul Marino</span>
+                        </div>
+                        <!-- Color 2 (Actualizado a Marrón Chocolate Oscuro) -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-14 h-14 rounded-full bg-[#4A2211] shadow-md border-2 border-white"></div>
+                            <span class="text-[11px] font-medium tracking-wide text-neutral-500 mt-3"
+                                >Marrón Oscuro</span
+                            >
+                        </div>
+                        <!-- Color 3 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-14 h-14 rounded-full bg-[#1E3F20] shadow-md border-2 border-white"></div>
+                            <span class="text-[11px] font-medium tracking-wide text-neutral-500 mt-3">Verde Pino</span>
+                        </div>
+                        <!-- Color 4 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-14 h-14 rounded-full bg-[#2C3539] shadow-md border-2 border-white"></div>
+                            <span class="text-[11px] font-medium tracking-wide text-neutral-500 mt-3">Gris Oxford</span>
+                        </div>
+                        <!-- Color 5 -->
+                        <div class="flex flex-col items-center col-span-2 sm:col-span-1">
+                            <div
+                                class="w-14 h-14 rounded-full bg-[#171717] shadow-md border-2 border-white mx-auto"></div>
+                            <span class="text-[11px] font-medium tracking-wide text-neutral-500 mt-3"
+                                >Negro Riguroso</span
+                            >
                         </div>
                     </div>
 
-                    <!-- Cantidad de Boletos -->
-                    <div>
-                        <label for="companions" class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-2">Boletos Reservados / Invitados</label>
-                        <select id="companions" class="w-full px-4 py-3 rounded-xl border border-terracotta-200 focus:ring-2 focus:ring-terracotta-400 focus:outline-none bg-white text-sm transition duration-200">
-                            <option value="1">Solo yo (1 boleto)</option>
-                            <option value="2">Yo + 1 acompañante (2 boletos)</option>
-                            <option value="3">3 boletos</option>
-                            <option value="4">4 boletos</option>
-                        </select>
+                    <!-- Notas y restricciones amables -->
+                    <div
+                        class="mt-8 pt-6 border-t border-terracotta-200/50 text-xs text-neutral-500 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-circle-info text-terracotta-500 text-sm"></i>
+                        <span
+                            >Nota: Amablemente sugerimos considerar
+                            <strong>omitir el rojo, blanco y perla</strong>.</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mesa de Regalos -->
+        <section class="py-20 px-6 bg-creme-100/40 text-center">
+            <div class="max-w-4xl mx-auto">
+                <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3"
+                    >Mesa de Regalos</span
+                >
+                <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-8">Nuestros Registros</h2>
+                <p class="text-neutral-600 max-w-xl mx-auto text-sm md:text-base mb-12 leading-relaxed">
+                    El mejor regalo que podemos recibir es tu presencia en este nuevo capítulo de nuestras vidas, pero
+                    si gustas tener un detalle de bodas, te compartimos nuestras sugerencias.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                    <!-- Liverpool -->
+                    <div
+                        class="bg-white rounded-2xl p-6 border border-terracotta-200/50 flex flex-col justify-between items-center shadow-sm hover:shadow-md transition duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-terracotta-100 flex items-center justify-center text-terracotta-600 mb-4 text-xl">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-neutral-800 mb-2">Liverpool</h3>
+                        <p class="text-xs text-neutral-500 mb-6">Mesa de regalos física u online</p>
+                        <div
+                            class="w-full text-center py-2 px-3 bg-terracotta-50 text-terracotta-700 font-sans text-xs font-semibold rounded-lg tracking-wider mb-4 border border-terracotta-100">
+                            Nº Evento: 509231
+                        </div>
+                        <button
+                            onclick="copyText('509231', this)"
+                            class="text-xs text-gold-600 hover:text-gold-700 font-bold uppercase tracking-wider flex items-center gap-1 transition">
+                            <i class="fa-regular fa-copy"></i> Copiar Código
+                        </button>
                     </div>
 
-                    <!-- Restricciones alimenticias -->
-                    <div>
-                        <label for="dietary" class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-2">Especificaciones de Menú o Notas (Opcional)</label>
-                        <input type="text" id="dietary" placeholder="Ej. Menú vegetariano, alergia a frutos secos, etc."
-                               class="w-full px-4 py-3 rounded-xl border border-terracotta-200 focus:ring-2 focus:ring-terracotta-400 focus:outline-none bg-white text-sm transition duration-200">
+                    <!-- Amazon -->
+                    <div
+                        class="bg-white rounded-2xl p-6 border border-terracotta-200/50 flex flex-col justify-between items-center shadow-sm hover:shadow-md transition duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-terracotta-100 flex items-center justify-center text-terracotta-600 mb-4 text-xl">
+                            <i class="fa-brands fa-amazon"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-neutral-800 mb-2">Amazon</h3>
+                        <p class="text-xs text-neutral-500 mb-6">Lista de deseos digital</p>
+                        <div
+                            class="w-full text-center py-2 px-3 bg-terracotta-50 text-terracotta-700 font-sans text-xs font-semibold rounded-lg tracking-wider mb-4 border border-terracotta-100">
+                            Boda Elizabeth y José Luis
+                        </div>
+                        <a
+                            href="https://amazon.com"
+                            target="_blank"
+                            rel="noopener"
+                            class="text-xs text-gold-600 hover:text-gold-700 font-bold uppercase tracking-wider flex items-center gap-1 transition">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver la Lista
+                        </a>
                     </div>
 
-                    <!-- Recomendación de canción -->
-                    <div>
-                        <label for="music" class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-2">¿Qué canción te haría bailar toda la noche?</label>
-                        <input type="text" id="music" placeholder="Artista y Nombre de la Canción"
-                               class="w-full px-4 py-3 rounded-xl border border-terracotta-200 focus:ring-2 focus:ring-terracotta-400 focus:outline-none bg-white text-sm transition duration-200">
+                    <!-- Transferencia Directa -->
+                    <div
+                        class="bg-white rounded-2xl p-6 border border-terracotta-200/50 col-span-1 sm:col-span-2 md:col-span-1 flex flex-col justify-between items-center shadow-sm hover:shadow-md transition duration-300 mx-auto w-full">
+                        <div
+                            class="w-12 h-12 rounded-full bg-terracotta-100 flex items-center justify-center text-terracotta-600 mb-4 text-xl">
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-neutral-800 mb-2">Aportación CLABE</h3>
+                        <p class="text-xs text-neutral-500 mb-6">Aportaciones seguras directas</p>
+                        <div
+                            class="w-full text-center py-2 px-3 bg-terracotta-50 text-terracotta-700 font-sans text-xs font-semibold rounded-lg tracking-wider mb-4 border border-terracotta-100 truncate">
+                            0121 8000 4567 8901 23
+                        </div>
+                        <button
+                            onclick="copyText('012180004567890123', this)"
+                            class="text-xs text-gold-600 hover:text-gold-700 font-bold uppercase tracking-wider flex items-center gap-1 transition">
+                            <i class="fa-regular fa-copy"></i> Copiar CLABE
+                        </button>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Botón Enviar -->
-                    <button type="submit" class="w-full bg-terracotta-600 hover:bg-terracotta-700 text-white font-sans text-xs uppercase tracking-[0.2em] font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl hover:translate-y-[-1px] transition-all duration-300">
-                        Confirmar Mi Asistencia
-                    </button>
-                </form>
+        <!-- Confirmación RSVP Interactiva -->
+        <section class="py-20 px-6 bg-white relative" id="rsvp">
+            <div class="absolute left-4 top-1/2 -translate-y-1/2 opacity-5 text-[10rem] pointer-events-none">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
 
-                <!-- Tarjeta Modal de Éxito Interactivo (Sin popups intrusivos) -->
-                <div id="rsvpSuccessBox" class="hidden absolute inset-0 bg-creme-50/98 backdrop-blur-sm flex flex-col items-center justify-center p-8 text-center animate-fade-gold">
-                    <div class="w-16 h-16 rounded-full bg-sage-500 text-white flex items-center justify-center text-3xl mb-6 shadow-md">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                    <h3 class="font-serif text-3xl text-terracotta-700 mb-4">¡Confirmación Registrada!</h3>
-                    <p class="text-neutral-600 text-sm md:text-base max-w-md mx-auto mb-6">
-                        Hemos registrado correctamente tu confirmación. Nos alegra enormemente poder celebrar este hermoso día a tu lado.
+            <div class="max-w-2xl mx-auto relative z-10">
+                <div class="text-center mb-12">
+                    <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3"
+                        >R.S.V.P</span
+                    >
+                    <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-4">Confirma tu Asistencia</h2>
+                    <p class="text-neutral-500 text-sm md:text-base max-w-lg mx-auto">
+                        Agradecemos confirmar tu asistencia antes del
+                        <strong class="text-terracotta-600">15 de Octubre de 2026</strong> para coordinar de forma
+                        óptima cada detalle del banquete.
                     </p>
-                    <button onclick="resetRSVPForm()" class="text-xs text-gold-600 hover:text-gold-700 font-bold uppercase tracking-wider underline">
-                        Hacer otro registro
-                    </button>
+                </div>
+
+                <!-- Formulario RSVP -->
+                <div
+                    class="bg-creme-50 rounded-3xl p-8 md:p-10 border border-terracotta-200/60 shadow-lg relative overflow-hidden">
+                    <div
+                        class="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-terracotta-400 via-gold-500 to-terracotta-600"></div>
+
+                    <form id="rsvpForm" onsubmit="handleRSVPSubmit(event)" class="space-y-6">
+                        <!-- Nombre del Invitado -->
+                        <div>
+                            <label
+                                for="guest-name"
+                                class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-2"
+                                >Nombre Completo</label
+                            >
+                            <input
+                                type="text"
+                                id="guest-name"
+                                required
+                                placeholder="Escribe tu nombre y apellido"
+                                class="w-full px-4 py-3 rounded-xl border border-terracotta-200 focus:ring-2 focus:ring-terracotta-400 focus:outline-none bg-white text-sm transition duration-200" />
+                        </div>
+
+                        <!-- Asistencia Si/No -->
+                        <div>
+                            <span class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-3"
+                                >¿Nos Acompañarás?</span
+                            >
+                            <div class="grid grid-cols-2 gap-4">
+                                <label
+                                    class="flex items-center justify-center gap-2 p-4 bg-white border border-terracotta-200 rounded-xl cursor-pointer hover:border-terracotta-400 transition-all">
+                                    <input
+                                        type="radio"
+                                        name="attendance"
+                                        value="si"
+                                        required
+                                        class="accent-terracotta-500 h-4 w-4" />
+                                    <span class="text-sm font-semibold text-neutral-700">Sí, con gusto</span>
+                                </label>
+                                <label
+                                    class="flex items-center justify-center gap-2 p-4 bg-white border border-terracotta-200 rounded-xl cursor-pointer hover:border-terracotta-400 transition-all">
+                                    <input
+                                        type="radio"
+                                        name="attendance"
+                                        value="no"
+                                        required
+                                        class="accent-terracotta-500 h-4 w-4" />
+                                    <span class="text-sm font-semibold text-neutral-700">No podré asistir</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Cantidad de Boletos -->
+                        <div>
+                            <label
+                                for="companions"
+                                class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-2"
+                                >Boletos Reservados / Invitados</label
+                            >
+                            <select
+                                id="companions"
+                                class="w-full px-4 py-3 rounded-xl border border-terracotta-200 focus:ring-2 focus:ring-terracotta-400 focus:outline-none bg-white text-sm transition duration-200">
+                                <option value="1">Solo yo (1 boleto)</option>
+                                <option value="2">Yo + 1 acompañante (2 boletos)</option>
+                                <option value="3">3 boletos</option>
+                                <option value="4">4 boletos</option>
+                            </select>
+                        </div>
+
+                        <!-- Restricciones alimenticias -->
+                        <div>
+                            <label
+                                for="dietary"
+                                class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-2"
+                                >Especificaciones de Menú o Notas (Opcional)</label
+                            >
+                            <input
+                                type="text"
+                                id="dietary"
+                                placeholder="Ej. Menú vegetariano, alergia a frutos secos, etc."
+                                class="w-full px-4 py-3 rounded-xl border border-terracotta-200 focus:ring-2 focus:ring-terracotta-400 focus:outline-none bg-white text-sm transition duration-200" />
+                        </div>
+
+                        <!-- Recomendación de canción -->
+                        <div>
+                            <label
+                                for="music"
+                                class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-2"
+                                >¿Qué canción te haría bailar toda la noche?</label
+                            >
+                            <input
+                                type="text"
+                                id="music"
+                                placeholder="Artista y Nombre de la Canción"
+                                class="w-full px-4 py-3 rounded-xl border border-terracotta-200 focus:ring-2 focus:ring-terracotta-400 focus:outline-none bg-white text-sm transition duration-200" />
+                        </div>
+
+                        <!-- Botón Enviar -->
+                        <button
+                            type="submit"
+                            class="w-full bg-terracotta-600 hover:bg-terracotta-700 text-white font-sans text-xs uppercase tracking-[0.2em] font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl hover:translate-y-[-1px] transition-all duration-300">
+                            Confirmar Mi Asistencia
+                        </button>
+                    </form>
+
+                    <!-- Tarjeta Modal de Éxito Interactivo (Sin popups intrusivos) -->
+                    <div
+                        id="rsvpSuccessBox"
+                        class="hidden absolute inset-0 bg-creme-50/98 backdrop-blur-sm flex flex-col items-center justify-center p-8 text-center animate-fade-gold">
+                        <div
+                            class="w-16 h-16 rounded-full bg-sage-500 text-white flex items-center justify-center text-3xl mb-6 shadow-md">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="font-serif text-3xl text-terracotta-700 mb-4">¡Confirmación Registrada!</h3>
+                        <p class="text-neutral-600 text-sm md:text-base max-w-md mx-auto mb-6">
+                            Hemos registrado correctamente tu confirmación. Nos alegra enormemente poder celebrar este
+                            hermoso día a tu lado.
+                        </p>
+                        <button
+                            onclick="resetRSVPForm()"
+                            class="text-xs text-gold-600 hover:text-gold-700 font-bold uppercase tracking-wider underline">
+                            Hacer otro registro
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Galería de detalles (Fotos decorativas) -->
-    <section class="py-12 bg-creme-100/30">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="h-64 rounded-2xl overflow-hidden shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=400" 
-                         alt="Decoración Boda Terracota" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/400x300/8C523A/FAF6F0?text=Detalles'">
-                </div>
-                <div class="h-64 rounded-2xl overflow-hidden shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=400" 
-                         alt="Pareja romántica" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/400x300/8C523A/FAF6F0?text=Elizabeth+José Luis'">
-                </div>
-                <div class="h-64 rounded-2xl overflow-hidden shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=400" 
-                         alt="Anillos de Boda" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/400x300/8C523A/FAF6F0?text=Compromiso'">
-                </div>
-                <div class="h-64 rounded-2xl overflow-hidden shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1507504038482-7621abf8c325?auto=format&fit=crop&q=80&w=400" 
-                         alt="Banquete e Iluminación" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/400x300/8C523A/FAF6F0?text=Recepci%C3%B3n'">
+        <!-- Galería de detalles (Fotos decorativas) -->
+        <section class="py-12 bg-creme-100/30">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="h-64 rounded-2xl overflow-hidden shadow-sm">
+                        <img
+                            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=400"
+                            alt="Decoración Boda Terracota"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/400x300/8C523A/FAF6F0?text=Detalles'" />
+                    </div>
+                    <div class="h-64 rounded-2xl overflow-hidden shadow-sm">
+                        <img
+                            src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=400"
+                            alt="Pareja romántica"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/400x300/8C523A/FAF6F0?text=Elizabeth+José Luis'" />
+                    </div>
+                    <div class="h-64 rounded-2xl overflow-hidden shadow-sm">
+                        <img
+                            src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=400"
+                            alt="Anillos de Boda"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/400x300/8C523A/FAF6F0?text=Compromiso'" />
+                    </div>
+                    <div class="h-64 rounded-2xl overflow-hidden shadow-sm">
+                        <img
+                            src="https://images.unsplash.com/photo-1507504038482-7621abf8c325?auto=format&fit=crop&q=80&w=400"
+                            alt="Banquete e Iluminación"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/400x300/8C523A/FAF6F0?text=Recepci%C3%B3n'" />
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Cierre de Página -->
-    <footer class="py-16 bg-gradient-to-t from-terracotta-900 to-terracotta-950 text-white text-center relative">
-        <div class="max-w-4xl mx-auto px-6">
-            <h3 class="font-serif text-4xl italic text-gold-200 mb-4">Elizabeth & José Luis</h3>
-            <p class="text-xs uppercase tracking-[0.4em] text-terracotta-200 mb-8">Te esperamos con los brazos abiertos</p>
-            
-            <div class="w-16 h-[1px] bg-gold-500/50 mx-auto mb-8"></div>
-            
-            <p class="text-[11px] font-sans text-terracotta-300 tracking-widest">
-                Noviembre 28, 2026 • Guadalajara, Jalisco
-            </p>
-        </div>
-    </footer>
+        <!-- Cierre de Página -->
+        <footer class="py-16 bg-gradient-to-t from-terracotta-900 to-terracotta-950 text-white text-center relative">
+            <div class="max-w-4xl mx-auto px-6">
+                <h3 class="font-serif text-4xl italic text-gold-200 mb-4">Elizabeth & José Luis</h3>
+                <p class="text-xs uppercase tracking-[0.4em] text-terracotta-200 mb-8">
+                    Te esperamos con los brazos abiertos
+                </p>
 
-    <!-- LÓGICA DE JAVASCRIPT -->
-    <script>
-        // 1. CONTROL DE LA CUENTA REGRESIVA
-        // Fecha del evento: 28 de Noviembre de 2026, 17:00:00 (Hora de la Ceremonia)
-        const targetDate = new Date("Nov 28, 2026 17:00:00").getTime();
+                <div class="w-16 h-[1px] bg-gold-500/50 mx-auto mb-8"></div>
 
-        const countdownInterval = setInterval(function() {
-            const now = new Date().getTime();
-            const difference = targetDate - now;
+                <p class="text-[11px] font-sans text-terracotta-300 tracking-widest">
+                    Noviembre 28, 2026 • Guadalajara, Jalisco
+                </p>
+            </div>
+        </footer>
 
-            // Cálculos del tiempo
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        <!-- LÓGICA DE JAVASCRIPT -->
+        <script>
+            // 1. CONTROL DE LA CUENTA REGRESIVA
+            // Fecha del evento: 28 de Noviembre de 2026, 17:00:00 (Hora de la Ceremonia)
+            const targetDate = new Date("Nov 28, 2026 17:00:00").getTime();
 
-            // Inyectar en los elementos HTML
-            document.getElementById("countdown-days").innerText = String(days).padStart(2, '0');
-            document.getElementById("countdown-hours").innerText = String(hours).padStart(2, '0');
-            document.getElementById("countdown-minutes").innerText = String(minutes).padStart(2, '0');
-            document.getElementById("countdown-seconds").innerText = String(seconds).padStart(2, '0');
+            const countdownInterval = setInterval(function () {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
 
-            // Detener contador al cumplirse la fecha
-            if (difference < 0) {
-                clearInterval(countdownInterval);
-                document.getElementById("countdown-days").innerText = "00";
-                document.getElementById("countdown-hours").innerText = "00";
-                document.getElementById("countdown-minutes").innerText = "00";
-                document.getElementById("countdown-seconds").innerText = "00";
-            }
-        }, 1000);
+                // Cálculos del tiempo
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-        // 2. ENVIAR FORMULARIO RSVP DE MANERA INTERACTIVA
-        function handleRSVPSubmit(event) {
-            event.preventDefault();
-            
-            // Recopilar datos para pruebas (puedes vincularlos a Google Sheets o correo si lo deseas en el futuro)
-            const guestName = document.getElementById("guest-name").value;
-            const attendance = document.querySelector('input[name="attendance"]:checked').value;
-            const companions = document.getElementById("companions").value;
-            const dietary = document.getElementById("dietary").value;
-            const music = document.getElementById("music").value;
+                // Inyectar en los elementos HTML
+                document.getElementById("countdown-days").innerText = String(days).padStart(2, "0");
+                document.getElementById("countdown-hours").innerText = String(hours).padStart(2, "0");
+                document.getElementById("countdown-minutes").innerText = String(minutes).padStart(2, "0");
+                document.getElementById("countdown-seconds").innerText = String(seconds).padStart(2, "0");
 
-            console.log("Asistencia Confirmada:", { guestName, attendance, companions, dietary, music });
-
-            // Mostrar el mensaje de confirmación elegante
-            const successBox = document.getElementById("rsvpSuccessBox");
-            successBox.classList.remove("hidden");
-        }
-
-        function resetRSVPForm() {
-            document.getElementById("rsvpForm").reset();
-            document.getElementById("rsvpSuccessBox").classList.add("hidden");
-        }
-
-        // 3. COPIAR DATOS DE REGALOS (Cuentas, códigos)
-        function copyText(text, btnElement) {
-            const el = document.createElement('textarea');
-            el.value = text;
-            el.setAttribute('readonly', '');
-            el.style.position = 'absolute';
-            el.style.left = '-9999px';
-            document.body.appendChild(el);
-            el.select();
-            
-            try {
-                const successful = document.execCommand('copy');
-                if (successful) {
-                    const originalHTML = btnElement.innerHTML;
-                    btnElement.innerHTML = '<i class="fa-solid fa-check text-green-600"></i> Copiado';
-                    setTimeout(() => {
-                        btnElement.innerHTML = originalHTML;
-                    }, 2000);
+                // Detener contador al cumplirse la fecha
+                if (difference < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdown-days").innerText = "00";
+                    document.getElementById("countdown-hours").innerText = "00";
+                    document.getElementById("countdown-minutes").innerText = "00";
+                    document.getElementById("countdown-seconds").innerText = "00";
                 }
-            } catch (err) {
-                console.error('No se pudo copiar el texto', err);
+            }, 1000);
+
+            // 2. ENVIAR FORMULARIO RSVP DE MANERA INTERACTIVA
+            function handleRSVPSubmit(event) {
+                event.preventDefault();
+
+                // Recopilar datos para pruebas (puedes vincularlos a Google Sheets o correo si lo deseas en el futuro)
+                const guestName = document.getElementById("guest-name").value;
+                const attendance = document.querySelector('input[name="attendance"]:checked').value;
+                const companions = document.getElementById("companions").value;
+                const dietary = document.getElementById("dietary").value;
+                const music = document.getElementById("music").value;
+
+                console.log("Asistencia Confirmada:", { guestName, attendance, companions, dietary, music });
+
+                // Mostrar el mensaje de confirmación elegante
+                const successBox = document.getElementById("rsvpSuccessBox");
+                successBox.classList.remove("hidden");
             }
-            document.body.removeChild(el);
-        }
 
-        // 4. CONTROLADOR OPTIMIZADO DEL REPRODUCTOR DE MÚSICA
-        const music = document.getElementById('ambientMusic');
-        const musicToggleBtn = document.getElementById('musicToggleBtn');
-        const musicIndicator = document.getElementById('musicIndicator');
-
-        function toggleMusic() {
-            if (music.paused) {
-                music.play().then(() => {
-                    musicIndicator.classList.add('playing');
-                }).catch(err => {
-                    console.log("No se pudo iniciar el audio debido a las políticas de seguridad del navegador.");
-                });
-            } else {
-                music.pause();
-                musicIndicator.classList.remove('playing');
+            function resetRSVPForm() {
+                document.getElementById("rsvpForm").reset();
+                document.getElementById("rsvpSuccessBox").classList.add("hidden");
             }
-        }
 
-        // 5. SISTEMA ANTIERRORES DE CARGA DE IMÁGENES
-        // Genera hermosos banners decorativos con los colores de la boda si las fotos no se han cargado en la misma carpeta local
-        function showImageFallback(imgElement, label = "") {
-            imgElement.style.display = 'none'; // Ocultar la etiqueta de la imagen fallida
-            const parent = imgElement.parentElement;
-            
-            // Crear el banner con diseño Premium Terracota
-            const fallbackDiv = document.createElement('div');
-            fallbackDiv.className = "w-full h-full flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-terracotta-700 to-terracotta-600 text-white";
-            fallbackDiv.innerHTML = `
+            // 3. COPIAR DATOS DE REGALOS (Cuentas, códigos)
+            function copyText(text, btnElement) {
+                const el = document.createElement("textarea");
+                el.value = text;
+                el.setAttribute("readonly", "");
+                el.style.position = "absolute";
+                el.style.left = "-9999px";
+                document.body.appendChild(el);
+                el.select();
+
+                try {
+                    const successful = document.execCommand("copy");
+                    if (successful) {
+                        const originalHTML = btnElement.innerHTML;
+                        btnElement.innerHTML = '<i class="fa-solid fa-check text-green-600"></i> Copiado';
+                        setTimeout(() => {
+                            btnElement.innerHTML = originalHTML;
+                        }, 2000);
+                    }
+                } catch (err) {
+                    console.error("No se pudo copiar el texto", err);
+                }
+                document.body.removeChild(el);
+            }
+
+            // 4. CONTROLADOR OPTIMIZADO DEL REPRODUCTOR DE MÚSICA
+            const music = document.getElementById("ambientMusic");
+            const musicToggleBtn = document.getElementById("musicToggleBtn");
+            const musicIndicator = document.getElementById("musicIndicator");
+
+            function toggleMusic() {
+                if (music.paused) {
+                    music
+                        .play()
+                        .then(() => {
+                            musicIndicator.classList.add("playing");
+                        })
+                        .catch((err) => {
+                            console.log(
+                                "No se pudo iniciar el audio debido a las políticas de seguridad del navegador."
+                            );
+                        });
+                } else {
+                    music.pause();
+                    musicIndicator.classList.remove("playing");
+                }
+            }
+
+            // 5. SISTEMA ANTIERRORES DE CARGA DE IMÁGENES
+            // Genera hermosos banners decorativos con los colores de la boda si las fotos no se han cargado en la misma carpeta local
+            function showImageFallback(imgElement, label = "") {
+                imgElement.style.display = "none"; // Ocultar la etiqueta de la imagen fallida
+                const parent = imgElement.parentElement;
+
+                // Crear el banner con diseño Premium Terracota
+                const fallbackDiv = document.createElement("div");
+                fallbackDiv.className =
+                    "w-full h-full flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-terracotta-700 to-terracotta-600 text-white";
+                fallbackDiv.innerHTML = `
                 <i class="fa-solid fa-image-portrait text-gold-200 text-3xl mb-3 animate-pulse"></i>
-                <h4 class="font-serif text-lg text-gold-200 italic tracking-wider">${label || 'Elizabeth & José Luis'}</h4>
+                <h4 class="font-serif text-lg text-gold-200 italic tracking-wider">${label || "Elizabeth & José Luis"}</h4>
                 <p class="text-[10px] uppercase tracking-widest text-terracotta-200 mt-2">Sube tu foto a tu servidor para visualizarla aquí</p>
             `;
-            parent.appendChild(fallbackDiv);
-        }
-    </script>
-</body>
+                parent.appendChild(fallbackDiv);
+            }
+        </script>
+    </body>
 </html>
