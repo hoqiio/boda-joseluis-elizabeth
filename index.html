@@ -436,7 +436,7 @@
                         </a>
 
                         <a
-                           href="tel:+525579000064"
+                           href="tel:+527773850550"
                            class="w-full text-center inline-block bg-terracotta-500 hover:bg-terracotta-600 text-white text-xs uppercase tracking-widest font-semibold py-4 px-6 rounded-xl shadow-md transition duration-300 mb-4">
                             <i class="fa-solid fa-phone mr-2"></i> Llamar al hotel
                         </a>
@@ -448,13 +448,10 @@
         <!-- Itinerario de Eventos -->
         <section class="py-20 px-6 bg-creme-50 relative overflow-hidden">
             <div class="absolute -right-24 top-1/4 opacity-5 text-neutral-800 text-[15rem] pointer-events-none">
-                <i class="fa-solid fa-leaf"></i>
+                <i class="fa-solid "></i>
             </div>
 
             <div class="max-w-3xl mx-auto relative z-10 text-center">
-                <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3"
-                    >El Protocolo</span
-                >
                 <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-16">Itinerario del Gran Día</h2>
 
                 <!-- Línea de tiempo elegante -->
@@ -467,12 +464,8 @@
                             1
                         </span>
                         <h4 class="font-serif text-xl font-semibold text-terracotta-700">
-                            17:00 hrs - Ceremonia de Unión
+                            13:30 hrs - Recepción
                         </h4>
-                        <p class="text-xs md:text-sm text-neutral-600 mt-2">
-                            Daremos inicio a nuestra unión religiosa formal en los jardines de Jardín Nautilus.
-                            Solicitamos puntualidad de todos los invitados.
-                        </p>
                     </div>
 
                     <!-- Paso 2 -->
@@ -482,12 +475,8 @@
                             2
                         </span>
                         <h4 class="font-serif text-xl font-semibold text-terracotta-700">
-                            18:15 hrs - Cóctel de Bienvenida
+                            14:00 hrs - Ceremonia Religiosa
                         </h4>
-                        <p class="text-xs md:text-sm text-neutral-600 mt-2">
-                            Disfrutaremos un agradable brindis de cortesía mientras nos preparamos para entrar al salón
-                            principal.
-                        </p>
                     </div>
 
                     <!-- Paso 3 -->
@@ -497,12 +486,8 @@
                             3
                         </span>
                         <h4 class="font-serif text-xl font-semibold text-terracotta-700">
-                            19:00 hrs - Banquete de Bodas
+                            15:00 hrs - Coctel de bienvenida
                         </h4>
-                        <p class="text-xs md:text-sm text-neutral-600 mt-2">
-                            Cena formal de tres tiempos especialmente diseñada para celebrar con nuestros amigos más
-                            queridos.
-                        </p>
                     </div>
 
                     <!-- Paso 4 -->
@@ -512,12 +497,30 @@
                             4
                         </span>
                         <h4 class="font-serif text-xl font-semibold text-terracotta-700">
-                            21:00 hrs - El Gran Vals y Baile
+                            16:00 hrs - Banquete
                         </h4>
-                        <p class="text-xs md:text-sm text-neutral-600 mt-2">
-                            ¡Es momento de bailar! Abriremos pista con nuestro primer vals oficial y daremos paso a la
-                            celebración.
-                        </p>
+                    </div>
+
+                    <!-- Paso 5 -->
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[35px] md:-left-[51px] top-1 bg-terracotta-500 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs shadow-md font-bold">
+                            5
+                        </span>
+                        <h4 class="font-serif text-xl font-semibold text-terracotta-700">
+                            18:00 hrs - El Gran Vals y Baile
+                        </h4>
+                    </div>
+
+                    <!-- Paso 6 -->
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[35px] md:-left-[51px] top-1 bg-terracotta-500 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs shadow-md font-bold">
+                            6
+                        </span>
+                        <h4 class="font-serif text-xl font-semibold text-terracotta-700">
+                            02:00 hrs - Fin del evento
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -867,8 +870,8 @@
         <!-- LÓGICA DE JAVASCRIPT -->
         <script>
             // 1. CONTROL DE LA CUENTA REGRESIVA
-            // Fecha del evento: 28 de Noviembre de 2026, 17:00:00 (Hora de la Ceremonia)
-            const targetDate = new Date("Nov 28, 2026 17:00:00").getTime();
+            // Fecha del evento: 28 de Noviembre de 2026, 13:30:00 (Hora de la Ceremonia)
+            const targetDate = new Date("Nov 28, 2026 13:30:00").getTime();
 
             const countdownInterval = setInterval(function () {
                 const now = new Date().getTime();
