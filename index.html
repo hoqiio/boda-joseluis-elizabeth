@@ -958,5 +958,77 @@
                 parent.appendChild(fallbackDiv);
             }
         </script>
+        <script>
+  // 🔴 REEMPLAZA ESTO CON TU URL DE GOOGLE APPS SCRIPT
+  const GOOGLE_APPS_SCRIPT_URL = "PEGA_TU_URL_AQUI";
+
+  async function handleRSVPSubmit(event) {
+    event.preventDefault();
+
+    // Obtener los valores del formulario
+    const guestName = document.getElementById('guest-name').value.trim();
+    const attendance = document.querySelector('input[name="attendance"]:checked').value;
+    const dietary = document.getElementById('dietary').value.trim() || 'Ninguna';
+
+    // Validar que el nombre no esté vacío
+    if (!guestName) {
+      alert('Por favor ingresa tu nombre completo');
+      return;
+    }
+
+    // Desactivar el botón mientras se envía
+    const submitBtn = event.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    try {
+      // Enviar los datos a Google Apps Script
+      const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nombre: guestName,
+          asistencia: attendance === 'si' ? 'Sí, con gusto' : 'No podré asistir',
+          alergias: dietary
+        })
+      });
+
+      // Procesar la respuesta
+      const result = await response.json();
+
+      if (result.success) {
+        // Mostrar pantalla de éxito
+        document.getElementById('rsvpForm').classList.add('hidden');
+        document.getElementById('rsvpSuccessBox').classList.remove('hidden');
+      } else {
+        alert('Error al registrar: ' + result.error);
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error de conexión. Verifica tu conexión a internet e intenta de nuevo.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  }
+
+  function resetRSVPForm() {
+    // Limpiar el formulario
+    document.getElementById('rsvpForm').reset();
+    
+    // Ocultar mensaje de éxito y mostrar formulario nuevamente
+    document.getElementById('rsvpForm').classList.remove('hidden');
+    document.getElementById('rsvpSuccessBox').classList.add('hidden');
+    
+    // Re-activar botón
+    const submitBtn = document.querySelector('button[type="submit"]');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Confirmar Mi Asistencia';
+  }
+</script>
     </body>
 </html>
