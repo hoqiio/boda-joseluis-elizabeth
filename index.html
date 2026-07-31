@@ -869,30 +869,7 @@
                 }
             }, 1000);
 
-            // 2. ENVIAR FORMULARIO RSVP DE MANERA INTERACTIVA
-            function handleRSVPSubmit(event) {
-                event.preventDefault();
-
-                // Recopilar datos para pruebas (puedes vincularlos a Google Sheets o correo si lo deseas en el futuro)
-                const guestName = document.getElementById("guest-name").value;
-                const attendance = document.querySelector('input[name="attendance"]:checked').value;
-                const companions = document.getElementById("companions").value;
-                const dietary = document.getElementById("dietary").value;
-                const music = document.getElementById("music").value;
-
-                console.log("Asistencia Confirmada:", { guestName, attendance, companions, dietary, music });
-
-                // Mostrar el mensaje de confirmación elegante
-                const successBox = document.getElementById("rsvpSuccessBox");
-                successBox.classList.remove("hidden");
-            }
-
-            function resetRSVPForm() {
-                document.getElementById("rsvpForm").reset();
-                document.getElementById("rsvpSuccessBox").classList.add("hidden");
-            }
-
-            // 3. COPIAR DATOS DE REGALOS (Cuentas, códigos)
+            // 2. COPIAR DATOS DE REGALOS (Cuentas, códigos)
             function copyText(text, btnElement) {
                 const el = document.createElement("textarea");
                 el.value = text;
@@ -917,7 +894,7 @@
                 document.body.removeChild(el);
             }
 
-            // 4. CONTROLADOR OPTIMIZADO DEL REPRODUCTOR DE MÚSICA
+            // 3. CONTROLADOR OPTIMIZADO DEL REPRODUCTOR DE MÚSICA
             const music = document.getElementById("ambientMusic");
             const musicToggleBtn = document.getElementById("musicToggleBtn");
             const musicIndicator = document.getElementById("musicIndicator");
@@ -957,6 +934,9 @@
             `;
                 parent.appendChild(fallbackDiv);
             }
+        </script>
+
+            <script>
   // 🔴 REEMPLAZA ESTO CON TU URL DE GOOGLE APPS SCRIPT
   const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxNGIvP9HfBwpC3VTaYSNr_h7WleC9xRm5ByyeMA4e0CScFbUsytAVnH0YysdzddVCO/exec";
 
