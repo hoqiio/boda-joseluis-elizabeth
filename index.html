@@ -690,11 +690,11 @@
 
                 <!-- Formulario RSVP -->
                 <div
-                    class="bg-creme-50 rounded-3xl p-8 md:p-10 border border-terracotta-200/60 shadow-lg relative overflow-hidden">
+                    class="bg-creme-50 rounded-3xl p-8 md:p-10 border border-terracotta-200/60 shadow-lg relative overflow-hidden min-h-[600px] flex flex-col">
                     <div
                         class="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-terracotta-400 via-gold-500 to-terracotta-600"></div>
 
-                    <form id="rsvpForm" onsubmit="handleRSVPSubmit(event)" class="space-y-6">
+                    <form id="rsvpForm" onsubmit="handleRSVPSubmit(event)" class="space-y-6 flex flex-col justify-center">
                         <!-- Nombre del Invitado -->
                         <div>
                             <label
@@ -765,9 +765,9 @@
                     <!-- Tarjeta Modal de Éxito Interactivo (Sin popups intrusivos) -->
                     <div
                         id="rsvpSuccessBox"
-                        class="hidden absolute inset-0 bg-creme-50/98 backdrop-blur-sm flex flex-col items-center justify-center p-8 text-center animate-fade-gold">
+                        class="hidden flex flex-col items-center justify-center p-8 text-center animate-fade-gold">
                         <div
-                            class="w-16 h-16 rounded-full bg-sage-500 text-white flex items-center justify-center text-3xl mb-6 shadow-md">
+                            class="w-16 h-32 rounded-full bg-sage-500 text-white flex items-center justify-center text-3xl mb-6 shadow-md">
                             <i class="fa-solid fa-heart"></i>
                         </div>
                         <h3 class="font-serif text-3xl text-terracotta-700 mb-4">¡Confirmación Registrada!</h3>
