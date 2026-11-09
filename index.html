@@ -671,118 +671,28 @@
 
         <!-- Confirmación RSVP Interactiva -->
         <section class="py-20 px-6 bg-white relative" id="rsvp">
-            <div class="absolute left-4 top-1/2 -translate-y-1/2 opacity-5 text-[10rem] pointer-events-none">
-                <i class="fa-solid fa-seedling"></i>
+        <div class="absolute left-4 top-1/2 -translate-y-1/2 opacity-5 text-[10rem] pointer-events-none">
+            <i class="fa-solid fa-seedling"></i>
+        </div>
+
+        <div class="max-w-2xl mx-auto relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3">R.S.V.P</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-4">Asistencia Registrada</h2>
             </div>
 
-            <div class="max-w-2xl mx-auto relative z-10">
-                <div class="text-center mb-12">
-                    <span class="text-xs uppercase tracking-[0.35em] text-terracotta-500 font-semibold block mb-3"
-                        >R.S.V.P</span
-                    >
-                    <h2 class="font-serif text-4xl md:text-5xl text-neutral-800 mb-4">Confirma tu Asistencia</h2>
-                    <p class="text-neutral-500 text-sm md:text-base max-w-lg mx-auto">
-                        Agradecemos confirmar tu asistencia antes del<br />
-                        <strong class="text-terracotta-600">28 de Octubre de 2026</strong> <br />para coordinar de forma
-                        óptima cada detalle del banquete.
-                    </p>
+            <!-- Mensaje de agradecimiento -->
+            <div class="bg-creme-50 rounded-3xl p-8 md:p-10 border border-terracotta-200/60 shadow-lg relative overflow-hidden text-center">
+                <div class="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-terracotta-400 via-gold-500 to-terracotta-600"></div>
+                <div class="w-16 h-16 rounded-full bg-sage-500 text-white flex items-center justify-center text-3xl mb-6 shadow-md mx-auto">
+                    <i class="fa-solid fa-heart"></i>
                 </div>
-
-                <!-- Formulario RSVP -->
-                <div
-                    class="bg-creme-50 rounded-3xl p-8 md:p-10 border border-terracotta-200/60 shadow-lg relative overflow-hidden min-h-[400px] flex flex-col">
-                    <div
-                        class="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-terracotta-400 via-gold-500 to-terracotta-600"></div>
-
-                    <form id="rsvpForm" onsubmit="handleRSVPSubmit(event)" class="space-y-6 flex flex-col justify-center">
-                        <!-- Nombre del Invitado -->
-                        <div>
-                            <label
-                                for="guest-name"
-                                class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-2"
-                                >Nombre Completo</label
-                            >
-                            <input
-                                type="text"
-                                id="guest-name"
-                                required
-                                placeholder="Escribe tu nombre y apellido"
-                                class="w-full px-4 py-3 rounded-xl border border-terracotta-200 focus:ring-2 focus:ring-terracotta-400 focus:outline-none bg-white text-sm transition duration-200" />
-                        </div>
-
-                        <!-- Asistencia Si/No -->
-                        <div>
-                            <span class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-3"
-                                >¿Nos Acompañarás?</span
-                            >
-                            <div class="grid grid-cols-2 gap-4">
-                                <label
-                                    class="flex items-center justify-center gap-2 p-4 bg-white border border-terracotta-200 rounded-xl cursor-pointer hover:border-terracotta-400 transition-all">
-                                    <input
-                                        type="radio"
-                                        name="attendance"
-                                        value="si"
-                                        required
-                                        class="accent-terracotta-500 h-4 w-4" />
-                                    <span class="text-sm font-semibold text-neutral-700">Sí, con gusto</span>
-                                </label>
-                                <label
-                                    class="flex items-center justify-center gap-2 p-4 bg-white border border-terracotta-200 rounded-xl cursor-pointer hover:border-terracotta-400 transition-all">
-                                    <input
-                                        type="radio"
-                                        name="attendance"
-                                        value="no"
-                                        required
-                                        class="accent-terracotta-500 h-4 w-4" />
-                                    <span class="text-sm font-semibold text-neutral-700">No podré asistir</span>
-                                </label>
-                            </div>
-                        </div>
-
-
-                        <!-- Restricciones alimenticias -->
-                        <div>
-                            <label
-                                for="dietary"
-                                class="block text-xs uppercase tracking-wider font-bold text-neutral-700 mb-2"
-                                >Alergias en alimentos o bebidas</label
-                            >
-                            <input
-                                type="text"
-                                id="dietary"
-                                placeholder="Ej. Ninguna, nuez, cerdo."
-                                class="w-full px-4 py-3 rounded-xl border border-terracotta-200 focus:ring-2 focus:ring-terracotta-400 focus:outline-none bg-white text-sm transition duration-200" />
-                        </div>
-
-                        <!-- Botón Enviar -->
-                        <button
-                            type="submit"
-                            class="w-full bg-terracotta-600 hover:bg-terracotta-700 text-white font-sans text-xs uppercase tracking-[0.2em] font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl hover:translate-y-[-1px] transition-all duration-300">
-                            Confirmar Mi Asistencia
-                        </button>
-                    </form>
-
-                    <!-- Tarjeta Modal de Éxito Interactivo (Sin popups intrusivos) -->
-                    <div
-                        id="rsvpSuccessBox"
-                        class="hidden flex flex-col items-center justify-center p-8 text-center animate-fade-gold">
-                        <div
-                            class="w-16 h-32 rounded-full bg-sage-500 text-white flex items-center justify-center text-3xl mb-6 shadow-md">
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-                        <h3 class="font-serif text-3xl text-terracotta-700 mb-4">¡Gracias por confirmar!</h3>
-                        <p class="text-neutral-600 text-sm md:text-base max-w-md mx-auto mb-6">
-                            Hemos registrado tu información correctamente. <br/>Gracias por tomarte el tiempo de confirmarnos.
-                        </p>
-                        <button
-                            onclick="resetRSVPForm()"
-                            class="text-xs text-gold-600 hover:text-gold-700 font-bold uppercase tracking-wider underline">
-                            Hacer otro registro
-                        </button>
-                    </div>
-                </div>
+                <p class="text-neutral-600 text-sm md:text-base max-w-md mx-auto">
+                    Gracias por haber registrado tu asistencia. En caso de no haber recibido un mensaje de confirmación del equipo de wedding planners, por favor acércate con los novios.
+                </p>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Galería de detalles (Fotos decorativas) -->
         <section class="py-12 bg-creme-100/30">
